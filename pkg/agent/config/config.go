@@ -6,6 +6,7 @@ import (
 	"encoding/pem"
 	"fmt"
 	"io/ioutil"
+	gnet "net"
 	"net/url"
 	"os"
 	"os/exec"
@@ -160,11 +161,20 @@ func get(envInfo *cmds.Agent) (*config.Node, error) {
 		return nil, errors.Wrapf(err, "failed to find host-local")
 	}
 
+	var flannelIface *gnet.Interface
+	if !envInfo.NoFlannel && len(envInfo.FlannelIface) > 0 {
+		flannelIface, err = gnet.InterfaceByName(envInfo.FlannelIface)
+		if err != nil {
+			return nil, errors.Wrapf(err, "unable to find interface")
+		}
+	}
+
 	nodeConfig := &config.Node{
 		Docker:                   envInfo.Docker,
 		NoFlannel:                envInfo.NoFlannel,
 		ContainerRuntimeEndpoint: envInfo.ContainerRuntimeEndpoint,
 	}
+	nodeConfig.FlannelIface = flannelIface
 	nodeConfig.LocalAddress = localAddress(controlConfig)
 	nodeConfig.Images = filepath.Join(envInfo.DataDir, "images")
 	nodeConfig.AgentConfig.NodeIP = nodeIP
