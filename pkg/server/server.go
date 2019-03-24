@@ -13,19 +13,19 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/rancher/k3s/pkg/daemons/config"
-	"github.com/rancher/k3s/pkg/daemons/control"
-	"github.com/rancher/k3s/pkg/datadir"
-	"github.com/rancher/k3s/pkg/deploy"
-	"github.com/rancher/k3s/pkg/helm"
-	"github.com/rancher/k3s/pkg/servicelb"
-	"github.com/rancher/k3s/pkg/static"
-	"github.com/rancher/k3s/pkg/tls"
-	appsv1 "github.com/rancher/k3s/types/apis/apps/v1"
-	batchv1 "github.com/rancher/k3s/types/apis/batch/v1"
-	corev1 "github.com/rancher/k3s/types/apis/core/v1"
-	v1 "github.com/rancher/k3s/types/apis/k3s.cattle.io/v1"
-	rbacv1 "github.com/rancher/k3s/types/apis/rbac.authorization.k8s.io/v1"
+	"github.com/erdii/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/daemons/control"
+	"github.com/erdii/k3s/pkg/datadir"
+	"github.com/erdii/k3s/pkg/deploy"
+	"github.com/erdii/k3s/pkg/helm"
+	"github.com/erdii/k3s/pkg/servicelb"
+	"github.com/erdii/k3s/pkg/static"
+	"github.com/erdii/k3s/pkg/tls"
+	appsv1 "github.com/erdii/k3s/types/apis/apps/v1"
+	batchv1 "github.com/erdii/k3s/types/apis/batch/v1"
+	corev1 "github.com/erdii/k3s/types/apis/core/v1"
+	v1 "github.com/erdii/k3s/types/apis/k3s.cattle.io/v1"
+	rbacv1 "github.com/erdii/k3s/types/apis/rbac.authorization.k8s.io/v1"
 	"github.com/rancher/norman"
 	"github.com/rancher/norman/pkg/clientaccess"
 	"github.com/rancher/norman/pkg/dynamiclistener"
@@ -38,9 +38,9 @@ import (
 func resolveDataDir(dataDir string) (string, error) {
 	if dataDir == "" {
 		if os.Getuid() == 0 {
-			dataDir = "/var/lib/rancher/k3s"
+			dataDir = "/var/lib/erdii/k3s"
 		} else {
-			dataDir = "${HOME}/.rancher/k3s"
+			dataDir = "${HOME}/.erdii/k3s"
 		}
 	}
 

@@ -15,8 +15,8 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/rancher/k3s/pkg/cli/cmds"
-	"github.com/rancher/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/cli/cmds"
+	"github.com/erdii/k3s/pkg/daemons/config"
 	"github.com/rancher/norman/pkg/clientaccess"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/util/json"

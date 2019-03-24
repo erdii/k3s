@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/rancher/k3s/pkg/daemons/config"
-	"github.com/rancher/k3s/pkg/openapi"
+	"github.com/erdii/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/openapi"
 	"k8s.io/apimachinery/pkg/util/json"
 )
 

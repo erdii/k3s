@@ -9,10 +9,10 @@ import (
 	"syscall"
 
 	"github.com/pkg/errors"
-	"github.com/rancher/k3s/pkg/cli/cmds"
-	"github.com/rancher/k3s/pkg/data"
-	"github.com/rancher/k3s/pkg/datadir"
-	"github.com/rancher/k3s/pkg/untar"
+	"github.com/erdii/k3s/pkg/cli/cmds"
+	"github.com/erdii/k3s/pkg/data"
+	"github.com/erdii/k3s/pkg/datadir"
+	"github.com/erdii/k3s/pkg/untar"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

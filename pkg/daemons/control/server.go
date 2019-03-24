@@ -23,7 +23,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rancher/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/daemons/config"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apiserver/pkg/authentication/authenticator"
 	certutil "k8s.io/client-go/util/cert"

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rancher/k3s/pkg/agent/util"
-	"github.com/rancher/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/agent/util"
+	"github.com/erdii/k3s/pkg/daemons/config"
 	"github.com/sirupsen/logrus"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"

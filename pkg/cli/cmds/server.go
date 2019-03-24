@@ -41,7 +41,7 @@ func NewServerCommand(action func(*cli.Context) error) cli.Command {
 			},
 			cli.StringFlag{
 				Name:        "data-dir,d",
-				Usage:       "Folder to hold state default /var/lib/rancher/k3s or ${HOME}/.rancher/k3s if not root",
+				Usage:       "Folder to hold state default /var/lib/erdii/k3s or ${HOME}/.erdii/k3s if not root",
 				Destination: &ServerConfig.DataDir,
 			},
 			cli.BoolFlag{

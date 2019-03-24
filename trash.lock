@@ -1,4 +1,4 @@
-package: package=github.com/rancher/k3s
+package: package=github.com/erdii/k3s
 import:
 - package: github.com/BurntSushi/toml
   version: a368813c5e648fee92e5f6c30e3944ff9d5e8895
@@ -156,7 +156,7 @@ import:
   version: v2.2.1
 - package: k8s.io/kubernetes
   version: v1.13.4-k3s.1
-  repo: https://github.com/rancher/k3s.git
+  repo: https://github.com/erdii/k3s.git
   transitive: true
   staging: true
 - package: github.com/mxk/go-flowrate

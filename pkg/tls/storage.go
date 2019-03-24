@@ -3,7 +3,7 @@ package tls
 import (
 	"context"
 
-	v1 "github.com/rancher/k3s/types/apis/k3s.cattle.io/v1"
+	v1 "github.com/erdii/k3s/types/apis/k3s.cattle.io/v1"
 	"github.com/rancher/norman/pkg/dynamiclistener"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

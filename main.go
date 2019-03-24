@@ -9,11 +9,11 @@ package main
 import (
 	"os"
 
-	"github.com/rancher/k3s/pkg/cli/agent"
-	"github.com/rancher/k3s/pkg/cli/cmds"
-	"github.com/rancher/k3s/pkg/cli/crictl"
-	"github.com/rancher/k3s/pkg/cli/kubectl"
-	"github.com/rancher/k3s/pkg/cli/server"
+	"github.com/erdii/k3s/pkg/cli/agent"
+	"github.com/erdii/k3s/pkg/cli/cmds"
+	"github.com/erdii/k3s/pkg/cli/crictl"
+	"github.com/erdii/k3s/pkg/cli/kubectl"
+	"github.com/erdii/k3s/pkg/cli/server"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rancher/k3s/pkg/agent"
-	"github.com/rancher/k3s/pkg/cli/cmds"
+	"github.com/erdii/k3s/pkg/agent"
+	"github.com/erdii/k3s/pkg/cli/cmds"
 	"github.com/rancher/norman/pkg/resolvehome"
 	"github.com/rancher/norman/signal"
 	"github.com/sirupsen/logrus"

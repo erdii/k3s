@@ -2,7 +2,7 @@ package main
 
 import (
 	bindata "github.com/jteeuwen/go-bindata"
-	v1 "github.com/rancher/k3s/types/apis/k3s.cattle.io/v1"
+	v1 "github.com/erdii/k3s/types/apis/k3s.cattle.io/v1"
 	"github.com/rancher/norman/generator"
 	"github.com/sirupsen/logrus"
 	appsv1 "k8s.io/api/apps/v1"
@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	basePackage = "github.com/rancher/k3s/types"
+	basePackage = "github.com/erdii/k3s/types"
 )
 
 func main() {

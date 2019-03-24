@@ -3,7 +3,7 @@ package cmds
 import (
 	"fmt"
 
-	"github.com/rancher/k3s/pkg/version"
+	"github.com/erdii/k3s/pkg/version"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/cli"
 )

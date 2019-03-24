@@ -92,7 +92,7 @@ func NewAgentCommand(action func(ctx *cli.Context) error) cli.Command {
 				Name:        "data-dir,d",
 				Usage:       "Folder to hold state",
 				Destination: &AgentConfig.DataDir,
-				Value:       "/var/lib/rancher/k3s",
+				Value:       "/var/lib/erdii/k3s",
 			},
 			cli.StringFlag{
 				Name:        "cluster-secret",

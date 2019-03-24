@@ -31,16 +31,16 @@ k3s is intended to be a fully compliant Kubernetes distribution with the followi
 
 Quick start
 -----------
-1. Download `k3s` from latest [release](https://github.com/rancher/k3s/releases/latest), x86_64, armhf, and arm64 are
+1. Download `k3s` from latest [release](https://github.com/erdii/k3s/releases/latest), x86_64, armhf, and arm64 are
    supported
 2. Run server
 
 ```bash
 sudo k3s server &
-# Kubeconfig is written to /etc/rancher/k3s/k3s.yaml
+# Kubeconfig is written to /etc/erdii/k3s/k3s.yaml
 sudo k3s kubectl get node
 
-# On a different node run the below. NODE_TOKEN comes from /var/lib/rancher/k3s/server/node-token
+# On a different node run the below. NODE_TOKEN comes from /var/lib/erdii/k3s/server/node-token
 # on your server
 sudo k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
 
@@ -57,16 +57,16 @@ You should get an output similar to
 
 ```
 INFO[2019-01-22T15:16:19.908493986-07:00] Starting k3s dev                             
-INFO[2019-01-22T15:16:19.908934479-07:00] Running kube-apiserver --allow-privileged=true --authorization-mode Node,RBAC --service-account-signing-key-file /var/lib/rancher/k3s/server/tls/service.key --service-cluster-ip-range 10.43.0.0/16 --advertise-port 6445 --advertise-address 127.0.0.1 --insecure-port 0 --secure-port 6444 --bind-address 127.0.0.1 --tls-cert-file /var/lib/rancher/k3s/server/tls/localhost.crt --tls-private-key-file /var/lib/rancher/k3s/server/tls/localhost.key --service-account-key-file /var/lib/rancher/k3s/server/tls/service.key --service-account-issuer k3s --api-audiences unknown --basic-auth-file /var/lib/rancher/k3s/server/cred/passwd --kubelet-client-certificate /var/lib/rancher/k3s/server/tls/token-node.crt --kubelet-client-key /var/lib/rancher/k3s/server/tls/token-node.key
+INFO[2019-01-22T15:16:19.908934479-07:00] Running kube-apiserver --allow-privileged=true --authorization-mode Node,RBAC --service-account-signing-key-file /var/lib/erdii/k3s/server/tls/service.key --service-cluster-ip-range 10.43.0.0/16 --advertise-port 6445 --advertise-address 127.0.0.1 --insecure-port 0 --secure-port 6444 --bind-address 127.0.0.1 --tls-cert-file /var/lib/erdii/k3s/server/tls/localhost.crt --tls-private-key-file /var/lib/erdii/k3s/server/tls/localhost.key --service-account-key-file /var/lib/erdii/k3s/server/tls/service.key --service-account-issuer k3s --api-audiences unknown --basic-auth-file /var/lib/erdii/k3s/server/cred/passwd --kubelet-client-certificate /var/lib/erdii/k3s/server/tls/token-node.crt --kubelet-client-key /var/lib/erdii/k3s/server/tls/token-node.key
 Flag --insecure-port has been deprecated, This flag will be removed in a future version.
-INFO[2019-01-22T15:16:20.196766005-07:00] Running kube-scheduler --kubeconfig /var/lib/rancher/k3s/server/cred/kubeconfig-system.yaml --port 0 --secure-port 0 --leader-elect=false
-INFO[2019-01-22T15:16:20.196880841-07:00] Running kube-controller-manager --kubeconfig /var/lib/rancher/k3s/server/cred/kubeconfig-system.yaml --service-account-private-key-file /var/lib/rancher/k3s/server/tls/service.key --allocate-node-cidrs --cluster-cidr 10.42.0.0/16 --root-ca-file /var/lib/rancher/k3s/server/tls/token-ca.crt --port 0 --secure-port 0 --leader-elect=false
+INFO[2019-01-22T15:16:20.196766005-07:00] Running kube-scheduler --kubeconfig /var/lib/erdii/k3s/server/cred/kubeconfig-system.yaml --port 0 --secure-port 0 --leader-elect=false
+INFO[2019-01-22T15:16:20.196880841-07:00] Running kube-controller-manager --kubeconfig /var/lib/erdii/k3s/server/cred/kubeconfig-system.yaml --service-account-private-key-file /var/lib/erdii/k3s/server/tls/service.key --allocate-node-cidrs --cluster-cidr 10.42.0.0/16 --root-ca-file /var/lib/erdii/k3s/server/tls/token-ca.crt --port 0 --secure-port 0 --leader-elect=false
 Flag --port has been deprecated, see --secure-port instead.
 INFO[2019-01-22T15:16:20.273441984-07:00] Listening on :6443                           
-INFO[2019-01-22T15:16:20.278383446-07:00] Writing manifest: /var/lib/rancher/k3s/server/manifests/coredns.yaml
-INFO[2019-01-22T15:16:20.474454524-07:00] Node token is available at /var/lib/rancher/k3s/server/node-token
+INFO[2019-01-22T15:16:20.278383446-07:00] Writing manifest: /var/lib/erdii/k3s/server/manifests/coredns.yaml
+INFO[2019-01-22T15:16:20.474454524-07:00] Node token is available at /var/lib/erdii/k3s/server/node-token
 INFO[2019-01-22T15:16:20.474471391-07:00] To join node to cluster: k3s agent -s https://10.20.0.3:6443 -t ${NODE_TOKEN}
-INFO[2019-01-22T15:16:20.541027133-07:00] Wrote kubeconfig /etc/rancher/k3s/k3s.yaml
+INFO[2019-01-22T15:16:20.541027133-07:00] Wrote kubeconfig /etc/erdii/k3s/k3s.yaml
 INFO[2019-01-22T15:16:20.541049100-07:00] Run: k3s kubectl                             
 ```
 
@@ -82,7 +82,7 @@ At this point, you can run the agent as a separate process or not run it on this
 Joining nodes
 -------------
 
-When the server starts it creates a file `/var/lib/rancher/k3s/server/node-token`. Use the contents
+When the server starts it creates a file `/var/lib/erdii/k3s/server/node-token`. Use the contents
 of that file as `NODE_TOKEN` and then run the agent as follows
 
     k3s agent --server https://myserver:6443 --token ${NODE_TOKEN}
@@ -92,16 +92,16 @@ That's it.
 Accessing cluster from outside
 -----------------------------
 
-Copy `/etc/rancher/k3s/k3s.yaml` on your machine located outside the cluster as `~/.kube/config`. Then replace
+Copy `/etc/erdii/k3s/k3s.yaml` on your machine located outside the cluster as `~/.kube/config`. Then replace
 "localhost" with the IP or name of your k3s server. `kubectl` can now manage your k3s cluster.
 
 Auto-deploying manifests
 ------------------------
 
-Any file found in `/var/lib/rancher/k3s/server/manifests` will automatically be deployed to
+Any file found in `/var/lib/erdii/k3s/server/manifests` will automatically be deployed to
 Kubernetes in a manner similar to `kubectl apply`.
 
-It is also possible to deploy Helm charts. k3s supports a CRD controller for installing charts. A YAML file specification can look as following (example taken from `/var/lib/rancher/k3s/server/manifests/traefik.yaml`):
+It is also possible to deploy Helm charts. k3s supports a CRD controller for installing charts. A YAML file specification can look as following (example taken from `/var/lib/erdii/k3s/server/manifests/traefik.yaml`):
 
 ```yaml
 apiVersion: k3s.cattle.io/v1
@@ -121,7 +121,7 @@ Building from source
 
 The clone will be much faster on this repo if you do
 
-    git clone --depth 1 https://github.com/rancher/k3s.git
+    git clone --depth 1 https://github.com/erdii/k3s.git
 
 This repo includes all of Kubernetes history so `--depth 1` will avoid most of that.
 
@@ -181,7 +181,7 @@ Just don't right now :)  It's currently broken.
 Running in Docker (and docker-compose)
 -----------------
 
-I wouldn't be me if I couldn't run my cluster in Docker.  `rancher/k3s` images are available
+I wouldn't be me if I couldn't run my cluster in Docker.  `erdii/k3s` images are available
 to run k3s server and agent from Docker.  A `docker-compose.yml` is in the root of this repo that
 serves as an example of how to run k3s from Docker.  To run from `docker-compose` from this repo run
 
@@ -197,9 +197,9 @@ serves as an example of how to run k3s from Docker.  To run from `docker-compose
 To run the agent only in Docker use the following `docker-compose-agent.yml` is in the root of this repo that
 serves as an example of how to run k3s agent from Docker. Alternatively the Docker run command can also be used;
 
-    sudo docker run -d --tmpfs /run --tmpfs /var/run -e K3S_URL=${SERVER_URL} -e K3S_TOKEN=${NODE_TOKEN} --privileged rancher/k3s:v0.2.0
+    sudo docker run -d --tmpfs /run --tmpfs /var/run -e K3S_URL=${SERVER_URL} -e K3S_TOKEN=${NODE_TOKEN} --privileged erdii/k3s:v0.2.0
 
-    sudo docker run -d --tmpfs /run --tmpfs /var/run -e K3S_URL=https://k3s.example.com:6443 -e K3S_TOKEN=K13849a67fc385fd3c0fa6133a8649d9e717b0258b3b09c87ffc33dae362c12d8c0::node:2e373dca319a0525745fd8b3d8120d9c --privileged rancher/k3s:v0.2.0
+    sudo docker run -d --tmpfs /run --tmpfs /var/run -e K3S_URL=https://k3s.example.com:6443 -e K3S_TOKEN=K13849a67fc385fd3c0fa6133a8649d9e717b0258b3b09c87ffc33dae362c12d8c0::node:2e373dca319a0525745fd8b3d8120d9c --privileged erdii/k3s:v0.2.0
 
 
 Hyperkube
@@ -272,7 +272,7 @@ curl -sfL https://get.k3s.io | K3S_URL=https://example-url:6443 K3S_TOKEN=XXX sh
 
 The installer can also be run without performing downloads by setting `INSTALL_K3S_SKIP_DOWNLOAD=true`, eg:
 ```sh
-curl -sfL https://github.com/rancher/k3s/releases/download/vX.Y.Z/k3s -o /usr/local/bin/k3s
+curl -sfL https://github.com/erdii/k3s/releases/download/vX.Y.Z/k3s -o /usr/local/bin/k3s
 chmod 0755 /usr/local/bin/k3s
 
 curl -sfL https://get.k3s.io -o install-k3s.sh

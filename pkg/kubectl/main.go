@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/rancher/k3s/pkg/server"
+	"github.com/erdii/k3s/pkg/server"
 	"github.com/spf13/pflag"
 	utilflag "k8s.io/apiserver/pkg/util/flag"
 	"k8s.io/apiserver/pkg/util/logs"

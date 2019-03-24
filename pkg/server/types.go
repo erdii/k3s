@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/rancher/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/daemons/config"
 	"github.com/rancher/norman/pkg/dynamiclistener"
 )
 

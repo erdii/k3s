@@ -6,8 +6,8 @@ import (
 	"sort"
 	"strconv"
 
-	appclient "github.com/rancher/k3s/types/apis/apps/v1"
-	coreclient "github.com/rancher/k3s/types/apis/core/v1"
+	appclient "github.com/erdii/k3s/types/apis/apps/v1"
+	coreclient "github.com/erdii/k3s/types/apis/core/v1"
 	"github.com/rancher/norman/condition"
 	"github.com/rancher/norman/pkg/changeset"
 	"github.com/rancher/norman/pkg/objectset"

@@ -55,7 +55,7 @@ set -e
 #     Type of systemd service to create, will default from the k3s exec command
 #     if not specified.
 
-GITHUB_URL=https://github.com/rancher/k3s/releases
+GITHUB_URL=https://github.com/erdii/k3s/releases
 
 # --- helper functions for logs ---
 info()
@@ -341,7 +341,7 @@ do_unmount() {
     fi
 }
 do_unmount '/run/k3s'
-do_unmount '/var/lib/rancher/k3s'
+do_unmount '/var/lib/erdii/k3s'
 
 nets=\$(ip link show master cni0 | grep cni0 | awk -F': ' '{print \$2}' | sed -e 's|@.*||')
 for iface in \$nets; do
@@ -357,8 +357,8 @@ if [ -L ${BIN_DIR}/crictl ]; then
     rm -f ${BIN_DIR}/crictl
 fi
 
-rm -rf /etc/rancher/k3s
-rm -rf /var/lib/rancher/k3s
+rm -rf /etc/erdii/k3s
+rm -rf /var/lib/erdii/k3s
 rm -f ${BIN_DIR}/k3s
 EOF
     $SUDO chmod 755 ${BIN_DIR}/${UNINSTALL_K3S_SH}

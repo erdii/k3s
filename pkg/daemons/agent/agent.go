@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rancher/k3s/pkg/daemons/config"
+	"github.com/erdii/k3s/pkg/daemons/config"
 	"github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/util/net"
 	"k8s.io/apiserver/pkg/util/logs"

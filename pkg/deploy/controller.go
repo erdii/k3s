@@ -15,7 +15,7 @@ import (
 
 	errors2 "github.com/pkg/errors"
 
-	v1 "github.com/rancher/k3s/types/apis/k3s.cattle.io/v1"
+	v1 "github.com/erdii/k3s/types/apis/k3s.cattle.io/v1"
 	"github.com/rancher/norman"
 	"github.com/rancher/norman/objectclient"
 	"github.com/rancher/norman/pkg/objectset"

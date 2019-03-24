@@ -8,10 +8,10 @@ import (
 )
 
 const (
-	DefaultDataDir     = "/var/lib/rancher/k3s"
-	DefaultHomeDataDir = "${HOME}/.rancher/k3s"
+	DefaultDataDir     = "/var/lib/erdii/k3s"
+	DefaultHomeDataDir = "${HOME}/.erdii/k3s"
 	HomeConfig         = "${HOME}/.kube/k3s.yaml"
-	GlobalConfig       = "/etc/rancher/k3s/k3s.yaml"
+	GlobalConfig       = "/etc/erdii/k3s/k3s.yaml"
 )
 
 func Resolve(dataDir string) (string, error) {
